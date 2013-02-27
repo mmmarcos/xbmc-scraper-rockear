@@ -23,14 +23,20 @@
 			
 			<!-- name -->
 			<RegExp input="$$1" output="&lt;name&gt;\1&lt;/name&gt;" dest="8">
-				<expression noclean="1">&lt;div class=&quot;artista&quot;&gt;(.[^&lt;]*)&lt;/div&gt;</expression>
+				<expression>&lt;div class=&quot;artista&quot;&gt;
+(.[^&lt;]*)&lt;/div&gt;</expression>
+			</RegExp>
+			
+			<!-- thumb -->
+			<RegExp input="$$1" output="&lt;thumb&gt;&lt;url spoof=&quot;http://www.rock.com.ar/&quot;&gt;http://www.rock.com.ar/img/foto/\1&lt;/url&gt;&lt;/thumb&gt;" dest="8+">
+				<expression noclean="1" repeat="yes">&lt;img src=&quot;/img/foto/200/(.[^&lt;]*)&quot; border=0 valign=top&gt;</expression>
 			</RegExp>
 
 			<!-- bio -->
 			<RegExp input="$$1" output="&lt;biography&gt;\1&lt;/biography&gt;" dest="8+">
-				<expression >&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;&lt;div class=&quot;nota&quot;&gt;([^=]*)&lt;/div&gt;&lt;br /&gt;&lt;/td&gt;</expression>
+				<expression>&lt;td align=&quot;left&quot; valign=&quot;top&quot;&gt;&lt;div class=&quot;nota&quot;&gt;(.*)&lt;/div&gt;&lt;br /&gt;&lt;/td&gt;</expression>
 			</RegExp>
-		
+
 			<expression noclean="1"/>
 		</RegExp>
 	</GetArtistDetails>
