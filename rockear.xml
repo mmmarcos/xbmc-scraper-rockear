@@ -28,7 +28,7 @@
 			</RegExp>
 			
 			<!-- thumb -->
-			<RegExp input="$$1" output="&lt;thumb&gt;&lt;url spoof=&quot;http://www.rock.com.ar/&quot;&gt;http://www.rock.com.ar/img/foto/\1&lt;/url&gt;&lt;/thumb&gt;" dest="8+">
+			<RegExp input="$$1" output="&lt;thumb spoof=&quot;http://www.rock.com.ar/&quot; preview=&quot;http://www.rock.com.ar/img/foto/200/\1&quot;&gt;http://www.rock.com.ar/img/foto/\1&lt;/thumb&gt;" dest="8+">
 				<expression noclean="1" repeat="yes">&lt;img src=&quot;/img/foto/200/(.[^&lt;]*)&quot; border=0 valign=top&gt;</expression>
 			</RegExp>
 
